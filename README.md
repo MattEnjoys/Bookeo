@@ -12,3 +12,9 @@ Projet gité sur [le git d'Anthony Laplane](https://github.com/arirangz/bookeo)
 > On crée le home.php pour y mettre le contenu restant de index.php. Ce fichier se retrouve avec juste l'inclusion de header et footer.
 
 ## Live 2 :
+
+> Live théorique sur la POO
+
+## Live 3 :
+
+>
