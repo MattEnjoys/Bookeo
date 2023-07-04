@@ -1,7 +1,5 @@
-<?php
-// Importer le header
-require_once('templates/header.php');
-?>
+<!--Importer le header -->
+<?php require_once _ROOTPATH_ . '\templates\header.php'; ?>
 <!-- Heroes Bootstrap -->
 <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
@@ -88,7 +86,5 @@ require_once('templates/header.php');
     </div>
 </div>
 <!-- Fin Card Bootstrap-->
-<?php
-// Importer le footer
-require_once('templates/footer.php');
-?>
+<!-- Importer le footer -->
+<?php require_once _ROOTPATH_ . '\templates\footer.php'; ?>

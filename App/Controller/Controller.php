@@ -6,24 +6,33 @@ class Controller
 {
     public function route(): void
     {
-        if (isset($_GET['controller'])) {
-            switch ($_GET['controller']) {
-                case 'page':
-                    // Charger le controlleur page
-                    $pageController = new PageController();
-                    $pageController->route();
-                    break;
-                // Charger le controlleur book
-                case 'book':
-                    // Charger le controlleur book
-                    var_dump('On charge BookController');
-                    break;
-                default:
-                    // Erreur
-                    break;
+        try {
+            if (isset($_GET['controller'])) {
+                switch ($_GET['controller']) {
+                    case 'page':
+                        // Charger le controlleur page
+                        $pageController = new PageController();
+                        $pageController->route();
+                        break;
+                    case 'book':
+                        // Charger le controlleur book
+                        $pageController = new BookController();
+                        $pageController->route();
+                        break;
+                    default:
+                        // Erreur
+                        throw new \Exception("Le controleur n'existe pas");
+                    // break;
+                }
+            } else {
+                // Chargement de la page d'accueil si pas de controleur dans l'URL
+                $pageController = new PageController();
+                $pageController->home();
             }
-        } else {
-            // Charger la page d'accueil
+        } catch (\Exception $e) {
+            $this->render('errors/default', [
+                'error' => $e->getMessage()
+            ]);
         }
     }
     protected function render(string $path, array $params = []): void
@@ -40,7 +49,9 @@ class Controller
                 require_once $filePath;
             }
         } catch (\Exception $e) {
-            echo $e->getMessage();
+            $this->render('errors/default', [
+                'error' => $e->getMessage()
+            ]);
         }
     }
 }
