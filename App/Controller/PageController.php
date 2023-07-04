@@ -33,6 +33,10 @@ class PageController extends Controller
             ]);
         }
     }
+    /*
+        Exemple d'appel depuis l'url
+        http://localhost/PHP/Bookeo/index.php?controller=page&action=about
+    */
     protected function about()
     {
         /* Appeler la methode about()
@@ -51,7 +55,10 @@ class PageController extends Controller
             'test2' => 'def',
         ]);
     }
-
+    /*
+            Exemple d'appel depuis l'url
+            http://localhost/PHP/Bookeo/index.php?controller=page&action=home
+        */
     protected function home()
     {
         $this->render('page/home', [

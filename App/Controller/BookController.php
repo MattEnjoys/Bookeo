@@ -41,6 +41,10 @@ class BookController extends Controller
             ]);
         }
     }
+    /*
+        Exemple d'appel depuis l'url
+        http://localhost/PHP/Bookeo/index.php?controller=book&action=show&id=1
+    */
     protected function show()
     {
         try {

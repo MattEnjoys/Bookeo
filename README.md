@@ -34,3 +34,10 @@ Projet gité sur [le git d'Anthony Laplane](https://github.com/arirangz/bookeo).
 > On s'attaque a l'entité Book.php en déclarant les setters et les getters. Puis on fais le controller BookController.php et enfin le rendu show.php dans le dossier book.
 > On crée BookRepository.php pour récupérer des infos.
 > On modifie le rendu show.php en conséquence.
+
+## Live 6 :
+
+> Connection à la BDD avec PDO.
+> On crée le fichier BD, le fichier Mysql.php le fichier config.php.
+> On crée le dossier tools pour y mettre le fichier StringTools.php pour pouvoir hydrater la fonction foreach de BookRepository.php
+> Réécriture d'URL avec le fichier .htaccess.
