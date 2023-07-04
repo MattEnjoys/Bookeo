@@ -18,3 +18,9 @@ Projet gité sur [le git d'Anthony Laplane](https://github.com/arirangz/bookeo)
 ## Live 3 :
 
 > Création du dossier App dans lequel on mettra les dossiers Entity, Controller et Repository et dedans les fichers associés.
+
+## Live 4 :
+
+> On crée le premier controller, PageController.php.
+> On réorganise les fichiers en regroupant les templates.
+> On appelle les rendus dans Controller.php et PageController.php

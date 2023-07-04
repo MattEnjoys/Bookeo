@@ -10,7 +10,8 @@ class Controller
             switch ($_GET['controller']) {
                 case 'page':
                     // Charger le controlleur page
-                    var_dump('On charge PageController');
+                    $pageController = new PageController();
+                    $pageController->route();
                     break;
                 // Charger le controlleur book
                 case 'book':
@@ -23,6 +24,23 @@ class Controller
             }
         } else {
             // Charger la page d'accueil
+        }
+    }
+    protected function render(string $path, array $params = []): void
+    {
+        $filePath = _ROOTPATH_ . '/templates/' . $path . '.php';
+
+        try {
+            if (!file_exists($filePath)) {
+                //  Générer un erreur
+                throw new \Exception("Fichier non trouvé : " . $filePath);
+            } else {
+                // Etrait chaque ligne du tableau et crée des variables pour chacune
+                extract($params);
+                require_once $filePath;
+            }
+        } catch (\Exception $e) {
+            echo $e->getMessage();
         }
     }
 }
